@@ -1,1 +1,24 @@
 <!-- Put the HTML template for your page here! -->
+<!DOCTYPE html>
+
+
+<html>
+<head>
+        <title>flask fun</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+    </head>
+
+    <body>
+        <h1> FRC </h1>
+        {% if no_names %}
+            <p> its fun and I'm the best </p>
+        {% else %}
+            <ul>
+                {% for names in names %}
+                <li> {{names}} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </body>
+</html>
