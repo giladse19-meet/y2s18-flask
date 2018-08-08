@@ -9,16 +9,25 @@
     </head>
 
     <body>
+        <div id = "sidebar">
+            <p> no time </p>
+        </div>
+        <div id="titles">
         <h1> FRC </h1>
-        {% if no_names %}
-            <p> its fun and I'm the best </p>
-        {% else %}
-            <ul>
-                {% for names in names %}
-                <li> {{names}} </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
+        <img src = "{{ url_for('static', filename = 'frc.png') }}">
+        <h2> The best teams </h2>
+        </div>
+        <div id="info">    
+            {% if no_names %}
+                <p> its fun and I'm the best </p>
+            {% else %}
+                <ul id = "list">
+                    {% for names in names %}
+                    <li> {{names}} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <img src = "{{ url_for('static', filename = 'miscar.jpeg') }}" id = "hidden_miscar">
+        </div>
     </body>
 </html>
